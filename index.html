@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Bookmark Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Project Bookmark Manager</h1>
+            <p class="subtitle">Organize and manage your project bookmarks efficiently</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Add Bookmark Section -->
+            <section class="add-bookmark-section">
+                <h2>Add New Bookmark</h2>
+                <form id="bookmarkForm">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="projectName" 
+                            placeholder="Project Name" 
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="url" 
+                            id="projectUrl" 
+                            placeholder="Project URL" 
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <textarea 
+                            id="projectDescription" 
+                            placeholder="Project Description (optional)" 
+                            rows="3"
+                        ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <select id="projectCategory">
+                            <option value="">Select Category</option>
+                            <option value="Work">Work</option>
+                            <option value="Learning">Learning</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Open Source">Open Source</option>
+                            <option value="Reference">Reference</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Bookmark</button>
+                </form>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <h2>Filter & Search</h2>
+                <div class="filter-controls">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search bookmarks..."
+                        class="search-input"
+                    >
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="Work">Work</button>
+                        <button class="filter-btn" data-filter="Learning">Learning</button>
+                        <button class="filter-btn" data-filter="Personal">Personal</button>
+                        <button class="filter-btn" data-filter="Open Source">Open Source</button>
+                        <button class="filter-btn" data-filter="Reference">Reference</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bookmarks Display Section -->
+            <section class="bookmarks-section">
+                <div class="section-header">
+                    <h2>Your Bookmarks</h2>
+                    <span id="bookmarkCount" class="bookmark-count">0</span>
+                </div>
+                <div id="bookmarksList" class="bookmarks-grid">
+                    <div class="empty-state">
+                        <p>No bookmarks yet. Add your first bookmark to get started! 🚀</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
